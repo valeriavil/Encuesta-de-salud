@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Salud</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Encuesta de Salud</h1>
+
+        <form id="formulario">
+
+            <!-- Nombre -->
+            <div class="grupo">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" required>
+            </div>
+
+            <!-- Edad -->
+            <div class="grupo">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" min="1" max="100" required>
+            </div>
+
+            <!-- Peso -->
+            <div class="grupo">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" min="20" max="300" required>
+            </div>
+
+            <!-- Nivel de dolor -->
+            <div class="grupo">
+                <label for="dolor">
+                    Nivel de dolor: 
+                    <span id="valorDolor">5</span>
+                </label>
+
+                <input type="range" id="dolor" min="0" max="10" value="5">
+            </div>
+
+            <!-- Tipo de sangre -->
+            <div class="grupo">
+                <label for="sangre">Tipo de sangre</label>
+
+                <select id="sangre" required>
+                    <option value="">Selecciona una opción</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+            </div>
+
+            <!-- Código Postal -->
+            <div class="grupo">
+                <label for="cp">Código Postal</label>
+
+                <input 
+                    type="text" 
+                    id="cp"
+                    pattern="[0-9]{5}"
+                    maxlength="5"
+                    placeholder="Ejemplo: 12345"
+                    required
+                >
+
+                <small>
+                    Debe contener exactamente 5 números
+                </small>
+            </div>
+
+            <!-- Botón -->
+            <button type="submit">Enviar Encuesta</button>
+
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
